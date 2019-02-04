@@ -117,3 +117,40 @@ export const Groups = defineModel<GroupAttributes>(db, 'group', {
   },
   ownerId: Sequelize.INTEGER,
 })
+
+export interface BatchAttributes {
+  code: string
+  name: string
+  whatsapp?: string
+  wakatime?: string
+  github?: string
+}
+
+export const Batches = defineModel<BatchAttributes>(db, 'batch', {
+  code: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  whatsapp: {
+    type: Sequelize.STRING,
+    validate: {
+      isUrl: true,
+    },
+  },
+  wakatime: {
+    type: Sequelize.STRING,
+    validate: {
+      isUrl: true,
+    },
+  },
+  github: {
+    type: Sequelize.STRING,
+    validate: {
+      isUrl: true,
+    },
+  },
+})

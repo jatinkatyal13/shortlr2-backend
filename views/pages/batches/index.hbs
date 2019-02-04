@@ -1,0 +1,28 @@
+{{!< center-container }}
+
+{{> error-snippet}}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Batch Name</th>
+            <th>Batch Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each batches}}
+            <tr>
+                <td>
+                    {{ inc @index }}
+                </td>
+                <td>
+                    {{ this.name }}
+                </td>
+                <td>
+                    {{ this.code }}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

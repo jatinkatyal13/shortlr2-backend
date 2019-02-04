@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { route as authRoute } from './auth'
+import { route as batchesRoute } from './batches'
 import { route as expandRoute } from './expand'
 import { route as urlsRoute } from './urls'
 
@@ -18,6 +19,7 @@ route.use((req, res, next) => {
 })
 
 route.use('/urls', urlsRoute)
+route.use('/batches', batchesRoute)
 route.use(authRoute)
 route.use(expandRoute)
 
